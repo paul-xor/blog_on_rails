@@ -1,4 +1,7 @@
-<h1>Showing Blog Post</h1>
+<h1>Showing Selected Blog Post</h1>
 
 <p>Title <%= @post.title %></p>
 <p>Post <%= @post.body %></p>
+
+<%= link_to 'Edit this post', edit_post_path(@post) %> |
+<%= link_to 'Back to posts', posts_path %>
