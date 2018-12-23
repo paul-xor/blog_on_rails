@@ -8,7 +8,7 @@
 
 Post.destroy_all
 
-100.times do
+500.times do
     created_at = Faker::Date.backward(365 * 5)
       
     p = Post.create(
@@ -16,7 +16,7 @@ Post.destroy_all
       # inside of module with ::. Here Hacker is a class inside of the
       # Faker module.
       title: Faker::Hacker.say_something_smart,
-      body: Faker::GreekPhilosophers.quote
+      body: Faker::GreekPhilosophers.quote,
       created_at: created_at,
       updated_at: created_at
     )
