@@ -1,6 +1,24 @@
 <h2 align='center'>Title: <%= @post.title %></h2>
 
-<div class='card col-xs-8'>
+<div class='card justify-content-center'>
+
+    <% if @post.user %>
+        <ul class='listing'>
+            <div class='row justify-content-center'>
+                <div class="card bg-light mb-3" style="min-width: 18rem;">
+                    <div class="card-header "><%= link_to gravatar_for(@post.user), user_path(@post.user) %></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= link_to @post.user.username, user_path(@post.user) %></h5>
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer"><small>
+                        <%= pluralize(@post.user.posts.count, "post") if @post.user.posts %>
+                    </small></div>
+                </div>
+            </div>
+        </ul>
+    <% end %>
+
     <h4 class='center body-desc'><strong>Post:</strong></h4>
     <hr>
     <%= simple_format(@post.body) %>
