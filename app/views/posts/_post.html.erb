@@ -10,18 +10,21 @@
                 <p class='card-text'>
                     <%= truncate(post.body, length: 200) %>
                     <div class='post-meta-details'>
-                        <small>Created by:<%= post.user.username if post.user%>,
+                        <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
                                 <%= time_ago_in_words(post.created_at) %> ago, <br>
                                 Last updated: <%= time_ago_in_words(post.updated_at) %> ago
                         </small>
                     </div>
                 </p>
-                <div class='post-actions'>
-                    <%= link_to 'Edit this post', edit_post_path(post), class: 'btn btn-sm btn-primary' %> 
-                    <%= link_to 'Delete post', posts_path(post), method: :delete, 
-                        data: {confirm: 'You are about to delete this post, are you sure?'},
-                        class: "btn btn-sm btn-danger" %>
-                </div>
+
+                <% if logged_in? && current_user == post.user %>
+                    <div class='post-actions'>
+                        <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-primary' %> 
+                        <%= link_to 'Delete post', posts_path(post), method: :delete, 
+                            data: {confirm: 'You are about to delete this post, are you sure?'},
+                            class: "btn btn-sm btn-danger" %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
