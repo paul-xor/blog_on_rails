@@ -37,6 +37,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'faker'
 gem 'cowsay'
+gem 'will_paginate', '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 
 group :development, :test do
