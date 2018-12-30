@@ -11,6 +11,10 @@
                         <p class="card-text"></p>
                     </div>
                     <div class="card-footer"><%= pluralize(user.posts.count, "post") if user.posts %></div>
+                    <% if logged_in? and current_user.admin? %>
+                        <%= link_to 'Delete this user', user_path(user), method: :delete,
+                        data: { confirm: "Are your sure you want to delete user and all his posts?" } %>
+                    <% end %>
                 </div>
             </div>
         </ul>

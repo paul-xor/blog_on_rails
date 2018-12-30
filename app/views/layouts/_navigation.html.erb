@@ -3,8 +3,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    
-    <%= link_to '🐈 Alfa blog', root_path, class: "navbar-brand", id: "logo" %>
+    <%=image_tag("catsvg.svg", alt: "Cat Image", hight:40, width:55)%>
+    <%= link_to 'Alfa blog', root_path, class: "navbar-brand", id: "logo" %>
 
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
@@ -34,7 +34,7 @@
 
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Your profile
+            Your profile <%= "Admin" if current_user.admin?  %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to 'Edit your profile', edit_user_path(current_user), class: "dropdown-item" %>

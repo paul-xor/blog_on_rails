@@ -23,7 +23,7 @@
     <hr>
     <%= simple_format(@post.body) %>
     <div class='post-actions'>
-        <% if logged_in? && current_user == @post.user %>
+        <% if logged_in? && (current_user == @post.user || current_user.admin?) %>
             <%= link_to 'Edit post', edit_post_path(@post), class: 'btn btn-sm btn-primary mb-2 ml-1' %> 
             <%= link_to 'Delete post', posts_path(@post), method: :delete, 
             data: {confirm: 'You are about to delete this post, are you sure?'},
