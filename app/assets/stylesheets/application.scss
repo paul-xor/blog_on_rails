@@ -11,16 +11,22 @@
 #logo {
     float: left;
     font-size: 1.7em;
-    color: #f29;
-    text-transform: uppercase;
+    color: rgb(27, 27, 27);
+    //text-transform: uppercase;
     letter-spacing: 0.8px;
     //font-weight: bolt;
     
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Ubuntu', sans-serif;
 }
 #logo:hover {
     color: #fff;
     text-decoration: none;
+}
+.navbar{
+    font-family: 'Ubuntu', sans-serif;
+}
+.container{
+    font-family: 'Ubuntu', sans-serif;
 }
 .center{
     text-align: center;
