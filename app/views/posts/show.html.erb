@@ -31,4 +31,42 @@
         <% end %>
         <%= link_to 'Back to posts', posts_path, class: 'btn btn-sm btn-success mb-2 ml-1'%>
     </div>
+
+    <%# form_with(model: [@post, @comment], local: true) do |f| %>
+    <%= form_with(model: @comment, url: [@post, @comment], local: true) do |f| %>
+        <%# Errors loop should be here!%>
+        
+        <h4 class='center body-desc'><strong>Comment:</strong></h4>
+
+        <div align='center'>
+            <%= f.text_area(
+            :body,
+            cols: 100,
+            rows: 5,
+            placeholder: "What are your thoughts?"
+            ) %>
+        </div>
+            <%= f.submit "Comment", class:'btn btn-success btn-sm mb-2 ml-1' %>
+    <% end %>
+
+    <ul class="comment-list">
+        <% @comments.each do |comment| %>
+            <li>
+            <p>
+                <%= comment.body %> <br>
+                <small>
+                <%= link_to(
+                    "Delete",
+                    post_comment_path(@post.id, comment.id),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }
+                ) %>
+                </small>
+                â¢
+                <small>commented <%= time_ago_in_words(comment.created_at) %> ago</small>
+            </p>
+            </li>
+        <% end %>
+    </ul>
+
 </div>
