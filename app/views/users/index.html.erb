@@ -1,6 +1,6 @@
 <h1 align="center">All Bloggers</h1>
 <div align="center">
-    <%= will_paginate %>
+    <%= render 'shared/pagination', obj: @users %>
     <% @users.each do |user| %>
         <ul class='listing'>
             <div class='row justify-content-center'>
@@ -19,5 +19,5 @@
             </div>
         </ul>
     <% end %>
-    <%= will_paginate %>
+    <%= render 'shared/pagination', obj: @users %>
 </div>

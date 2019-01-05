@@ -9,9 +9,9 @@
 <h4 align="center"><%= @user.username %>'s posts</h4>
 
 <div class="center">
-    <%= will_paginate @user_posts%>
+    <%= render 'shared/pagination', obj: @user_posts %>
 </div>
     <%= render "posts/post", obj: @user_posts  %>
 <div class="center">
-    <%= will_paginate @user_posts%>
+    <%= render 'shared/pagination', obj: @user_posts %>
 </div>

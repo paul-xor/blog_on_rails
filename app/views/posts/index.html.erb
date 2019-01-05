@@ -1,8 +1,9 @@
 <h1 align='center'>Listing all Posts</h1>
- <div align='center'>
-     <%= will_paginate %>
- </div>
+
+<%= render 'shared/pagination', obj: @posts %>
+
 <%= render "post", obj: @posts %>
-<div align='center'>
-    <%= will_paginate %>
-</div>
+
+<%= render 'shared/pagination', obj: @posts %>
+
+
