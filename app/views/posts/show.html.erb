@@ -21,7 +21,7 @@
 
     <h4 class='center body-desc'><strong>Post:</strong></h4>
     <hr>
-    <%= simple_format(@post.body) %>
+    <%= raw @post.body %>
     <div class='post-actions'>
         <% if logged_in? && (current_user == @post.user || current_user.admin?) %>
             <%= link_to 'Edit post', edit_post_path(@post), class: 'btn btn-sm btn-primary mb-2 ml-1' %> 
