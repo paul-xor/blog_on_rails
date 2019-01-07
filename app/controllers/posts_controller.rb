@@ -28,7 +28,7 @@ class PostsController < ApplicationController
         @comments = @post.comments.order(created_at: :desc)
         @comment = Comment.new
 
-        @post.update_columns(view_count: @post.view_count + 1)
+        #@post.update_columns(view_count: @post.view_count + 1)
     end
 
     def edit

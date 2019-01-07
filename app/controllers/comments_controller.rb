@@ -6,8 +6,8 @@ class CommentsController < ApplicationController
         @comment = Comment.new comm_params 
         @comment.post = @post
 
-        if comment.save
-            redirect_to post_path(@post_id)
+        if @comment.save
+            redirect_to post_path(@post.id)
         else
             @comments = @post.comments.order(created_at: :desc)
             render "posts/show"
