@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  get 'signup', to: 'users#new' 
+  get 'signup', to: 'users#new'
   resources :users, except: [:new]
+
+  resources :categories, except: [:destroy]
+
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

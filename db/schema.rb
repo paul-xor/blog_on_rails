@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_01_03_194222) do
-=======
-ActiveRecord::Schema.define(version: 2019_01_06_071225) do
->>>>>>> wysiwyg-ckeditor
+ActiveRecord::Schema.define(version: 2019_01_14_050643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_01_06_071225) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
->>>>>>> wysiwyg-ckeditor
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.bigint "post_id"
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 2019_01_06_071225) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
-    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
