@@ -6,12 +6,12 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 //$navbar-default-bg: #79a7e0;
 
- @import "bootstrap";
+ //@import "bootstrap";
 
 #logo {
     float: left;
     font-size: 1.7em;
-    color: rgb(27, 27, 27);
+    //color: rgb(27, 27, 27);
     //text-transform: uppercase;
     letter-spacing: 0.8px;
     //font-weight: bolt;
@@ -19,11 +19,17 @@
     font-family: 'Ubuntu', sans-serif;
 }
 #logo:hover {
-    color: #fff;
+    color: #A9BDBD;
     text-decoration: none;
 }
 .navbar{
     font-family: 'Ubuntu', sans-serif;
+}
+.nav-link{
+    color:rgba(255,255,255,0.75);
+}
+.card-link{
+    color:rgba(255,255,255,0.75); 
 }
 .container{
     font-family: 'Ubuntu', sans-serif;
