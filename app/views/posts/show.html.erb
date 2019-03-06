@@ -1,11 +1,11 @@
 <h2 align='center'>Title: <%= @post.title %></h2>
 
-<div class='card justify-content-center'>
+<div class='card justify-content-center mt-3'>
 
     <% if @post.user %>
         <ul class='listing'>
             <div class='row justify-content-center'>
-                <div class="card bg-light mb-3" style="min-width: 18rem;">
+                <div class="card bg-light mt-4 mb-3 " style="min-width: 18rem;">
                     <div class="card-header "><%= link_to gravatar_for(@post.user), user_path(@post.user) %></div>
                     <div class="card-body">
                         <h5 class="card-title"><%= link_to @post.user.username, user_path(@post.user) %></h5>
@@ -20,33 +20,35 @@
     <% end %>
 
     <h4 class='center body-desc'><strong>Post:</strong></h4>
-    <hr>
-    <%= raw @post.body %>
+    
+    <div class="post-body mr-3 ml-3">
+        <%= raw @post.body %>
+    </div>
     <div class='post-actions'>
         <% if logged_in? && (current_user == @post.user || current_user.admin?) %>
-            <%= link_to 'Edit post', edit_post_path(@post), class: 'btn btn-sm btn-primary mb-2 ml-1' %> 
+            <%= link_to 'Edit post', edit_post_path(@post), class: 'btn btn-sm btn-primary mb-2 ml-3 mt-3' %> 
             <%= link_to 'Delete post', posts_path(@post), method: :delete, 
             data: {confirm: 'You are about to delete this post, are you sure?'},
-            class: "btn btn-sm btn-danger mb-2 ml-1" %>
+            class: "btn btn-sm btn-danger mb-2 ml-1 mt-3" %>
         <% end %>
-        <%= link_to 'Back to posts', posts_path, class: 'btn btn-sm btn-success mb-2 ml-1'%>
+        <%= link_to 'Back to posts', posts_path, class: 'btn btn-sm btn-success mb-2 ml-1 mt-3'%>
     </div>
 
     <%# form_with(model: [@post, @comment], local: true) do |f| %>
-    <%= form_with(model: @comment, url: [@post, @comment], local: true) do |f| %>
+    <%= form_with(model: @comment, url: [@post, @comment], local: true, class:"cz-color-9868419") do |f| %>
         <%# Errors loop should be here!%>
         
         <h4 class='center body-desc'><strong>Comment:</strong></h4>
 
-        <div align='center'>
+        <div class="form-group cz-color-9868419 ml-3 mr-3">
             <%= f.text_area(
             :body,
-            cols: 100,
+            cols: 80,
             rows: 5,
-            placeholder: "What are your thoughts?"
-            ) %>
+            placeholder: "What are your thoughts?",
+            class:"form-control cz-color-5722185 cz-color-12434857 cz-color-0") %>
         </div>
-            <%= f.submit "Comment", class:'btn btn-success btn-sm mb-2 ml-1' %>
+            <%= f.submit "Comment", class:'btn btn-success btn-sm mb-2 ml-3' %>
     <% end %>
 
     <ul class="comment-list">
