@@ -16,7 +16,9 @@
                         </small>
                     </div>
                 </p>
-
+                <% if post.categories.any?  %>
+                    <p class="badge badge-pill badge-primary">Categories: <%= render post.categories %></p>
+                <% end %>
                 <% if logged_in? && (current_user == post.user || current_user.admin?) %>
                     <div class='post-actions'>
                         <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-primary' %> 

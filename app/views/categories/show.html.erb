@@ -1,0 +1,9 @@
+<h1 align='center'><%= "Category: "+ @category.name %></h1>
+
+<%= render 'shared/pagination', obj: @category_posts %>
+
+<%= render "posts/post", obj: @category_posts %>
+
+<%= render 'shared/pagination', obj: @category_posts %>
+
+
