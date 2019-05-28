@@ -8,7 +8,11 @@
             </div>
             <div class='card-body cz-color-16777215'>
                 <p class='card-text cz-color-16777215'>
-                    <%= truncate(post.body, length: 200) %>
+                    <%# truncate(post.body.html_safe, length: 150) %>
+                    <%# truncate_html(post.body, 150) %>
+                    <%# truncate(post.body, lenght: 150, escape: false) %>
+                    <%= post.body.truncate(150) %>
+                    
                     <div class='post-meta-details'>
                         <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
                                 <%= time_ago_in_words(post.created_at) %> ago, <br>
