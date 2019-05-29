@@ -2,12 +2,12 @@
 <% obj.each do |post| %>
     
     <div class='col-lg-4 col-sm-6 mb-3'>
-        <div class='card text-white bg-success mb-3 cz-color-16777215 cz-color-10002730 cz-color-3549952" style="max-width: 20rem;'>
-            <div class="card-header cz-color-16777215 cz-color-4339207 cz-color-3549952">
+        <div class='card border-primary mb-3" style="max-width: 20rem;'>
+            <div class="card-header">
                 <%= link_to post.title, post_path(post), class: "card-link" %>
             </div>
-            <div class='card-body cz-color-16777215'>
-                <p class='card-text cz-color-16777215'>
+            <div class='card-body '>
+                <p class='card-text '>
                     <%# truncate(post.body.html_safe, length: 150) %>
                     <%# truncate_html(post.body, 150) %>
                     <%# truncate(post.body, lenght: 150, escape: false) %>
