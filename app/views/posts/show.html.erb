@@ -1,28 +1,31 @@
-<h2 align='center'>Title: <%= @post.title %></h2>
+    
+
+<h2 class='post-title mt-4'> <%= @post.title %></h2>
 
 <div class='card justify-content-center mt-3'>
 
-    <% if @post.user %>
-        <ul class='listing'>
-            <div class='row justify-content-center'>
-                <div class="card bg-light mt-4 mb-3 " style="min-width: 18rem;">
-                    <div class="card-header "><%= link_to gravatar_for(@post.user), user_path(@post.user) %></div>
-                    <div class="card-body">
-                        <h5 class="card-title"><%= link_to @post.user.username, user_path(@post.user) %></h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer"><small>
-                        <%= pluralize(@post.user.posts.count, "post") if @post.user.posts %>
-                    </small></div>
-                </div>
-            </div>
-        </ul>
-    <% end %>
 
-    <h4 class='center body-desc'><strong>Post:</strong></h4>
+    <%# <h4 class='center body-desc'><strong>Post:</strong></h4> %>
     
     <div class="post-body mr-3 ml-3">
         <%= raw @post.body %>
+
+        <% if @post.user %>
+            <ul class='listing'>
+                <div class='row'>
+                    <div class="card border-secondary mb-3 mt-2" style="max-width: 20rem;">
+                        <div class="card-header ">
+                            <%= link_to gravatar_for(@post.user, size:50), user_path(@post.user) %>
+                            <%= link_to @post.user.username, user_path(@post.user) %> |
+                            <span class="badge badge-pill badge-primary">
+                            <small><%= pluralize(@post.user.posts.count, "post") if @post.user.posts %></small>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        <% end %>
+
         <% if @post.categories.any? %>
             <p class="text-primary">Categories: <%= render @post.categories %></p>
         <% end %>
