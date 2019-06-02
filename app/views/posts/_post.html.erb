@@ -6,13 +6,13 @@
             <div class="card-header">
                 <%= link_to post.title, post_path(post), class: "card-link color#black" %>
             </div>
-            <div class='card-body '>
+            <%= image_tag post.image.url(:thumb), class: "img-thumbnail" if post.image? %>
+            <div class='card-body'>
                 <p class='card-text '>
                     <%# truncate(post.body.html_safe, length: 150) %>
                     <%# truncate_html(post.body, 150) %>
-                    <%# truncate(post.body, lenght: 150, escape: false) %>
-                    <%= post.body.truncate(150) %>
-                    <%= image_tag @post.image.url(:thumb), class: "img-show" if @post.image? %>
+                    <%= truncate(post.body, escape: false, length: 150) %>
+                    <%# post.body.truncate(150) %> 
                     
                     <div class='post-meta-details'>
                         <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
