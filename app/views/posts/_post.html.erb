@@ -9,11 +9,13 @@
             <%= image_tag post.image.url(:thumb), class: "img-thumbnail" if post.image? %>
             <div class='card-body'>
                 <p class='card-text '>
-                    <%# truncate(post.body.html_safe, length: 150) %>
-                    <%# truncate_html(post.body, 150) %>
-                    <%= truncate(post.body, escape: false, length: 150) %>
+                    <%# truncate(post.body, escape: false, length: 100, separator: " ", 
+                        omission: '... ') { link_to 'Continue', post_path(post)} %>
                     <%# post.body.truncate(150) %> 
-                    
+                    <div>
+                        <%= truncate(post.summary, escape: false, length: 100, separator: " ",
+                            omission: '...') {link_to 'continue', post_path(post)} %>
+                    </div>
                     <div class='post-meta-details'>
                         <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
                                 <%= time_ago_in_words(post.created_at) %> ago, <br>
