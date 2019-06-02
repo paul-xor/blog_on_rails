@@ -11,7 +11,7 @@
                     <%# truncate(post.body.html_safe, length: 150) %>
                     <%# truncate_html(post.body, 150) %>
                     <%# truncate(post.body, lenght: 150, escape: false) %>
-                    <%= post.body.truncate(150) %>
+                    <% post.body.truncate(150) %>
                     
                     <div class='post-meta-details'>
                         <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
