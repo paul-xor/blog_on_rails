@@ -5,6 +5,7 @@
         <div class='card border-primary mb-3" style="max-width: 20rem;'>
             <div class="card-header">
                 <%= link_to post.title, post_path(post), class: "card-link color#black" %>
+                <%= fa_icon "angle-double-right" %>
             </div>
             <%= image_tag post.image.url(:thumb), class: "img-thumbnail" if post.image? %>
             <div class='card-body'>
@@ -12,13 +13,16 @@
                     <%# truncate(post.body, escape: false, length: 100, separator: " ", 
                         omission: '... ') { link_to 'Continue', post_path(post)} %>
                     <%# post.body.truncate(150) %> 
-                    <div>
+                    <div class='text-primary'>
                         <%= truncate(post.summary, escape: false, length: 100, separator: " ",
                             omission: '...') {link_to 'continue', post_path(post)} %>
                     </div>
                     <div class='post-meta-details'>
                         <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
                                 <%= time_ago_in_words(post.created_at) %> ago, <br>
+                                <%# fa_icon 'fa-history' %>
+                                <%# fa_icon('fa-history') %>
+                                <i class="fas fa-clock"></i>
                                 Last updated: <%= time_ago_in_words(post.updated_at) %> ago
                         </small>
                     </div>

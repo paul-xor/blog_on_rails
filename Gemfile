@@ -43,6 +43,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'ckeditor'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
