@@ -1,7 +1,58 @@
-<div class = "center jumbotron">
-    <h1 class="display-5">ALFA BLOG</h1>
 
-    <%= link_to 'Sing up now', signup_path, class: 'btn btn-outline-light btn-lg btn-xlarge'  %>
+<header class="v-header container">
+    <div class="fullscreen-video-wrap">
+        <%= video_tag "video-buildings.mp4", autoplay: true, 
+        loop: true, type:"video/mp4" %>
+    </div>
+    <div class="header-overlay"></div>
+    <div class="header-content">
+        <h1>Hello Everyone!)</h1>
+        <p>Welcome to Medium Marketing, please Login/Sing up.</p>
+        <%= link_to 'Sing up now', signup_path, class: 'btn btn-outline-light btn-lg btn-xlarge'  %>
+    </div>
+</header>
 
+<section class="section section-a">
+    <div class="container">
+        <h1>Section A</h1>
+        <p>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Quasi fugiat aliquid natus 
+        quaerat atque. Fugiat officiis laudantium maxime, 
+        eaque delectus neque error non molestiae ullam, 
+        ea rem dolores nostrum excepturi!
+        </p>
+    </div>
+</section>
+<section class="section section-b">
+    <div class="container">
+        <h1>Section B</h1>
+        <p>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Quasi fugiat aliquid natus 
+        quaerat atque. Fugiat officiis laudantium maxime, 
+        eaque delectus neque error non molestiae ullam, 
+        ea rem dolores nostrum excepturi!
+        </p>
+    </div>
+</section>
+<%#  
+<div>
+    <div class="section">
+        <h1>Welcome to Marketing Medium</h1>
+        <video autoplay loop muted>
+            <source src='images/video-buildings.mp4' type='video/mp4'>
+        </video>
+    </div>
 </div>
 
+<header class="v-header container">
+    <div class="fullscreen-video-wrap">
+        <video src="assets/images/video-buildings.mp4"></video>
+    </div>
+</header>
+
+%>
+
+<div>
+    <%# video_tag "video-buildings.mp4", autoplay: true, 
+    loop: true, size:"800x450", controls: true, type:"video/mp4" %>
+</div>

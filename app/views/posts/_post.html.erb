@@ -1,45 +1,47 @@
-<div class='row justify-content-between'>
-<% obj.each do |post| %>
-    
-    <div class='col-lg-4 col-sm-6 mb-2'>
-        <div class='card border-primary mb-3" style="max-width: 20rem;'>
-            <div class="card-header">
-                <%= link_to post.title, post_path(post), class: "card-link color#black" %>
-                <%= fa_icon "angle-double-right" %>
-                <%= fa_icon "business-time" %>
-            </div>
-            <%= image_tag post.image.url(:thumb) if post.image? %>
-            <div class='card-body'>
-                <p class='card-text '>
-                    <%# truncate(post.body, escape: false, length: 100, separator: " ", 
-                        omission: '... ') { link_to 'Continue', post_path(post)} %>
-                    <%# post.body.truncate(150) %> 
-                    <div class='text-primary'>
-                        <%= truncate(post.summary, escape: false, length: 100, separator: " ",
-                            omission: '...') {link_to 'continue', post_path(post)} %>
-                    </div>
-                    <div class='post-meta-details'>
-                        <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
-                                <%= time_ago_in_words(post.created_at) %> ago, <br>
-                                <%# fa_icon 'fa-history' %>
-                                <%# fa_icon('fa-history') %>
-                                Last updated: <%= time_ago_in_words(post.updated_at) %> ago
-                        </small>
-                    </div>
-                </p>
-                <% if post.categories.any?  %>
-                    <p class="badge badge-pill ">Categories: <%= render post.categories %></p>
-                <% end %>
-                <% if logged_in? && (current_user == post.user || current_user.admin?) %>
-                    <div class='post-actions'>
-                        <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-outline-primary' %> 
-                        <%= link_to 'Delete post', post_path(post), method: :delete, 
-                            data: {confirm: 'You are about to delete this post, are you sure?'},
-                            class: "btn btn-sm btn-outline-danger" %>
-                    </div>
-                <% end %>
+
+    <div class='row justify-content-between'>
+    <% obj.each do |post| %>
+        
+        <div class='col-lg-4 col-sm-6 mb-2'>
+            <div class='card border-primary mb-3" style="max-width: 20rem;'>
+                <div class="card-header">
+                    <%= link_to post.title, post_path(post), class: "card-link color#black" %>
+                    <%= fa_icon "angle-double-right" %>
+                    <%= fa_icon "business-time" %>
+                </div>
+                <%= image_tag post.image.url(:thumb) if post.image? %>
+                <div class='card-body'>
+                    <p class='card-text '>
+                        <%# truncate(post.body, escape: false, length: 100, separator: " ", 
+                            omission: '... ') { link_to 'Continue', post_path(post)} %>
+                        <%# post.body.truncate(150) %> 
+                        <div class='text-primary'>
+                            <%= truncate(post.summary, escape: false, length: 100, separator: " ",
+                                omission: '...') {link_to 'continue', post_path(post)} %>
+                        </div>
+                        <div class='post-meta-details'>
+                            <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
+                                    <%= time_ago_in_words(post.created_at) %> ago, <br>
+                                    <%# fa_icon 'fa-history' %>
+                                    <%# fa_icon('fa-history') %>
+                                    Last updated: <%= time_ago_in_words(post.updated_at) %> ago
+                            </small>
+                        </div>
+                    </p>
+                    <% if post.categories.any?  %>
+                        <p class="badge badge-pill ">Categories: <%= render post.categories %></p>
+                    <% end %>
+                    <% if logged_in? && (current_user == post.user || current_user.admin?) %>
+                        <div class='post-actions'>
+                            <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-outline-primary' %> 
+                            <%= link_to 'Delete post', post_path(post), method: :delete, 
+                                data: {confirm: 'You are about to delete this post, are you sure?'},
+                                class: "btn btn-sm btn-outline-danger" %>
+                        </div>
+                    <% end %>
+                </div>
             </div>
         </div>
+    <% end %>
     </div>
-<% end %>
-</div>
+ 
