@@ -6,8 +6,9 @@
             <div class="card-header">
                 <%= link_to post.title, post_path(post), class: "card-link color#black" %>
                 <%= fa_icon "angle-double-right" %>
+                <%= fa_icon "business-time" %>
             </div>
-            <%= image_tag post.image.url(:thumb), class: "img-thumbnail" if post.image? %>
+            <%= image_tag post.image.url(:thumb) if post.image? %>
             <div class='card-body'>
                 <p class='card-text '>
                     <%# truncate(post.body, escape: false, length: 100, separator: " ", 
@@ -22,20 +23,19 @@
                                 <%= time_ago_in_words(post.created_at) %> ago, <br>
                                 <%# fa_icon 'fa-history' %>
                                 <%# fa_icon('fa-history') %>
-                                <i class="fas fa-clock"></i>
                                 Last updated: <%= time_ago_in_words(post.updated_at) %> ago
                         </small>
                     </div>
                 </p>
                 <% if post.categories.any?  %>
-                    <p class="badge badge-pill badge-primary">Categories: <%= render post.categories %></p>
+                    <p class="badge badge-pill ">Categories: <%= render post.categories %></p>
                 <% end %>
                 <% if logged_in? && (current_user == post.user || current_user.admin?) %>
                     <div class='post-actions'>
-                        <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-primary' %> 
+                        <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-outline-primary' %> 
                         <%= link_to 'Delete post', post_path(post), method: :delete, 
                             data: {confirm: 'You are about to delete this post, are you sure?'},
-                            class: "btn btn-sm btn-danger" %>
+                            class: "btn btn-sm btn-outline-danger" %>
                     </div>
                 <% end %>
             </div>
