@@ -110,24 +110,27 @@
 }
 
 .footer{
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid #eaeaea;
+    background: #000;
     color: #777;
+    // margin-top: 45px;
+    // padding-top: 5px;
+    // border-top: 1px solid #eaeaea;
+}
+.footer h3{
+    margin-top: 35px;
+    color: #fff;
+    text-align: left;
+    font-family: 'Encode Sans Semi Expanded', sans-serif !important;
+}
+.footer p{
+    //color: #fff;
+    text-align: left;
+    font-family: 'Encode Sans Semi Expanded', sans-serif !important;
 }
 .footer a:hover{
-    color: #222;
+    
+    color: #775;
 }
-.footer small{
-    float: left;
-}
-.footer ul{
-    float: right;
-    list-style: none;
-}
-.footer ul li{
-    float: left;
-    margin-left: 15px;
-}
+
 
 

@@ -1,13 +1,53 @@
-<div class="container">
-    <footer class="footer">
-    <small>
-        Copyright &copy; pasmo & nonshark.
-    </small>
-    <nav>
-        <ul>
-            <li><%= link_to 'About', pages_about_path %></li>
-        </ul>
-    </nav>
-    </footer>
-</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm clearfix">
+            <h3><strong>About </strong>Marketing Medium</h3>
+                <small>
+                <p>Marketing Media offers free blog platform, ... and graphics 
+                for use in any project. You may use these clips, images 
+                free of charge, in both personal and commercial productions. 
+                MM images that carry the Creative Commons 3.0 license must 
+                be attributed the original author.
+                <br />
+                <br />
+                If you have any suggestions for the site, or would like to make 
+                a request for free stock footage please contact us at:
+                <a href="mailto:hello@mm.net">hello@mm.net</a> 
+                and we'll do our best to help.</p>
+                </small>
+            </div>
+            <div class="col-sm clearfix">
+            <h3><strong>Quick</strong> Links</h3>
+            <p>
+                <%= link_to 'Blog', posts_path %> <br>
+                <%= link_to 'Contacts', pages_about_path %>
+
+            </p>
+            </div>
+            <div class="col-sm">
+            <h3><strong>Social </strong>Media</h3>
+            <small><p>For recent updates and news follow our social media feeds:</p></small>
+            <a href="https://twitter.com/videvo">
+                <div class="twitter-btn">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/Marketing-Medium-325344631438766/">
+                <div class="fb-btn">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/marketingfaq/">
+                <div class="insta-btn">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </div>
+            </a>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
         
