@@ -15,15 +15,20 @@
 
             <!-- Search Widget -->
             <div class="card my-4">
+                <form action="" method="get"></form>
                 <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                </div>
-                </div>
+                <%= form_tag "#", method: :get, id: "stock-lookup-form" do %>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <%= text_field_tag :search, params[:search],
+                            placeholder: 'Search ... ', type: :search, class: "form-control search-box input-lg" %>
+                            <span class="input-group-btn">
+                            <%# fa_icon 'fa fa-search' %>
+                            <button class="btn btn-secondary ml-1" type="button"><i class="fa fa-search"></i> Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                <% end %>
             </div>
 
             <!-- Categories Widget -->
