@@ -13,6 +13,8 @@
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= stylesheet_link_tag    'home', media: 'all' %>
+    <%= stylesheet_link_tag    'pages', media: 'all' %>
+    <%= stylesheet_link_tag    'screen-video', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -21,8 +23,8 @@
     
     <%= render "layouts/messages"%>
     <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
     <%= render "layouts/footer" %>
     
-    <%# debug(params) if Rails.env.development? %>
   </body>
 </html>

@@ -1,14 +1,16 @@
-<h1 align='center'><%= "Category: "+ @category.name %></h1>
+<div class="container">
+    <h1 align='center'><%= "Category: "+ @category.name %></h1>
 
-<% if logged_in? and current_user.admin? %>
-    <div align='center' >
-        <span class="badge badge-primary"><%= link_to 'Edit Category Name', edit_category_path(@category) %></span>
-    </div>
-<% end %>
+    <% if logged_in? and current_user.admin? %>
+        <div align='center' >
+            <span class="badge badge-primary"><%= link_to 'Edit Category Name', edit_category_path(@category) %></span>
+        </div>
+    <% end %>
 
-<%= render 'shared/pagination', obj: @category_posts %>
+    <%= render 'shared/pagination', obj: @category_posts %>
 
-<%= render "posts/post", obj: @category_posts %>
+    <%= render "posts/post", obj: @category_posts %>
 
-<%= render 'shared/pagination', obj: @category_posts %>
+    <%= render 'shared/pagination', obj: @category_posts %>
+</div>
 

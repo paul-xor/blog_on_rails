@@ -32,29 +32,36 @@
 .card-link{
     color:#8c8c8c; 
 }
-// .bg-dark{
+// .bg-primary{
 //     background:linear-gradient(#000 5%, #0000) !important
 // }
 
 .container{
     font-family: 'Ubuntu', sans-serif;
+    max-width: 1140px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    //text-align: center;
 }
 .center{
     text-align: center;
 }
-.jumbotron{
-    margin-top: 5px;
-    background-image: asset-url('story-img.png');
-    background-size: cover;
-    height: 600px;
-}
-.jumbotron h1 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 30px;
-    letter-spacing: -1px;
-    font-weight: bold;
-}
+
+// .jumbotron{
+//     margin-top: 5px;
+//     background-image: asset-url('story-img.png');
+//     background-size: cover;
+//     height: 600px;
+// }
+// .jumbotron h1 {
+//     color: #fff;
+//     text-align: center;
+//     margin-bottom: 30px;
+//     letter-spacing: -1px;
+//     font-weight: bold;
+// }
+
 .jumbotron-post{
     margin-top: 5px;
     background-image: asset-url('umberellas.jpg');

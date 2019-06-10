@@ -22,15 +22,13 @@
                         <div class='post-meta-details'>
                             <small>Created by: <strong><%= post.user.username if post.user%></strong> ,
                                     <%= time_ago_in_words(post.created_at) %> ago, <br>
-                                    <%# fa_icon 'fa-history' %>
-                                    <%# fa_icon('fa-history') %>
                                     Last updated: <%= time_ago_in_words(post.updated_at) %> ago
                             </small>
                         </div>
                     </p>
-                    <% if post.categories.any?  %>
-                        <p class="badge badge-pill ">Categories: <%= render post.categories %></p>
-                    <% end %>
+                        <% if post.categories.any?  %>
+                            <p class="badge badge-pill d-flex">#:<%= render post.categories %></p>
+                        <% end %>
                     <% if logged_in? && (current_user == post.user || current_user.admin?) %>
                         <div class='post-actions'>
                             <%= link_to 'Edit post', edit_post_path(post), class: 'btn btn-sm btn-outline-primary' %> 

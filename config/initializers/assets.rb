@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 #add new conf
 Rails.application.config.assets.precompile += %w( home.css )
+Rails.application.config.assets.precompile += %w( pages.css )
+Rails.application.config.assets.precompile += %w( screen-video.css )
