@@ -27,7 +27,8 @@
                         </div>
                     </p>
                         <% if post.categories.any?  %>
-                            <p class="badge badge-pill d-flex">#:<%= render post.categories %></p>
+                            
+                            <p class="badge d-flex">#:<%= render post.categories %></p>
                         <% end %>
                     <% if logged_in? && (current_user == post.user || current_user.admin?) %>
                         <div class='post-actions'>
