@@ -9,7 +9,7 @@
                             <%= text_field_tag :search, params[:search],
                             placeholder: 'Search ... ', type: :search, class: "form-control search-box input-lg" %>
                             <span class="input-group-btn">
-                            <%# fa_icon 'fa fa-search' %>
+                            <% fa_icon 'fa fa-search' %>
                             <button class="btn btn-secondary ml-1" type="button"><i class="fa fa-search"></i> Go!</button>
                             </span>
                         </div>
@@ -39,6 +39,22 @@
             <div class="card my-4">
                 <h5 class="card-header">Side Widget</h5>
                 <div class="card-body">
-                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                <div class='form-group' id="subreddit-form" >
+                        <select class='form-control' id='subreddit' onchange='subReddit()'>
+                            <option value="marketing" selected>Marketing</option>
+                            
+                            <option value="GoogleDataStudio">GoogleDataStudio</option>
+                        </select>
+                        <p id='results-container' class='btn btn-link mt-1'></p>
+                    </div>
                 </div>
             </div>
+
+        <script>
+            const subReddit = e => {
+                //e.preventDefault();
+                const subreddit = document.getElementById('subreddit').value;
+                //fetchPosts(subreddit);
+                document.getElementById("results-container").innerHTML = 'Selected' + subreddit;
+            };
+        </script>
