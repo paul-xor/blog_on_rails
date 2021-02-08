@@ -40,7 +40,7 @@ gem 'cowsay'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 # Project Specific Gems
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'ckeditor'
 gem 'font-awesome-rails'
